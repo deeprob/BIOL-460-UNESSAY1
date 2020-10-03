@@ -14267,7 +14267,7 @@ a.anchor-link {
 <li>Natural Selection</li>
 <li>Gene Flow</li>
 </ol>
-<p>For the purpose of this assignment, I will illustrate the first three phenomenon with examples and show how changes in each can affect the genetic diversity within populations. Following the illustration, I will discuss the Hudson's $F_{st}$ statistic which helps to quantify the diversity between populations. Some genetics related terms used in this assignment are also defined in the final section of this notebook.</p>
+<p>For the purpose of this assignment, I will illustrate the first three phenomena with examples and show how changes in each can affect the genetic diversity within a population. Following the illustration, I will discuss the Hudson's $F_{st}$ statistic which helps to quantify the diversity between populations. Some genetics related terms used in this assignment are also defined in the final section of this notebook.</p>
 
 </div>
 </div>
@@ -14309,8 +14309,8 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Mutation">Mutation<a class="anchor-link" href="#Mutation">&#182;</a></h2><p>A mutation is any change in the <a href="#tag1">DNA</a> sequence of an organism. It can be caused by a deletion or an insertion of <a href="#tag2">gene</a> or even by a single nucleotide polymorphism (<a href="#tag3">SNPS</a>).</p>
-<p>For our purposes, let's say we have preselected 5 fixed genes in the human <a href="#tag7">genome</a> and we wish to study mutations in these 5 genes. We have 10 different individuals in our population. Since they are all <a href="#tag4">diploid</a>, each gene will have 2 copies. Let's also imagine that we are at a specific point of time where there is no diversity between the individuals at these specific positions. We can represent our situation as a three dimensional array where the first, second and third dimensions correspond to the number of variants under study, number of individuals and the ploidy of the species respectively. Scikit-allel module helps us visualize in a smarter way as shown below. Its called the Genotype Array of a population.</p>
+<h2 id="Mutation">Mutation<a class="anchor-link" href="#Mutation">&#182;</a></h2><p>A mutation is any change in the <a href="#tag1">DNA</a> sequence of an organism. It can be caused by a deletion or an insertion of <a href="#tag2">genes</a> or even by a single nucleotide polymorphisms (<a href="#tag3">SNPs</a>).</p>
+<p>For our purposes, let's say we have preselected 5 fixed genes in the human <a href="#tag7">genome</a> and we wish to study mutations in these 5 genes. We have 10 different individuals in our population. Since they are all <a href="#tag4">diploid</a>, each gene will have 2 copies. Let's also imagine that we are at a point in time where there is no diversity between the individuals at these specific positions. We can represent our situation as a three dimensional array where the first, second and third dimensions correspond to the number of variants under study, number of individuals and the ploidy of the species respectively. Scikit-allel module helps us visualize in a smarter way as shown below. Its called the Genotype Array of a population.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14356,7 +14356,7 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Here, the rows represent the <a href="#tag5">genetic variants</a> or the specific genes under study, the columns represent the individuals and the values represent the <a href="#tag9">allele</a> at both chromosomes separated by a "/". In our case, since we do not have any diversity yet, all values are represented by 0.</p>
-<p>We can use the <a href="#tag8">pairwise distance metric</a> to get an idea of the diversity in the population. Scikit-allel helps us visualize this diversity through a pairwise distance matrix where each element of the matrix corresponds to the pairwise distance between the individuals given in the row and the column of the matrix. We have defined a function in our helper module that will not only output the pairwise distance matrix but also print the mean pairwise distance between all individuals in the population.</p>
+<p>We can use the <a href="#tag8">pairwise distance</a> metric to get an idea of the diversity in the population. Scikit-allel helps us visualize this diversity through a pairwise distance matrix where each element of the matrix corresponds to the pairwise distance between the individuals given in the row and the column of the matrix. We have defined a function in our helper module that will not only output the pairwise distance matrix but also print the mean pairwise distance between all individuals in the population.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14414,7 +14414,7 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>As we can see from the above plot, there is absolutely no difference between individuals as the mean pairwise distance is 0 as reflected in our matrix where all the pairwise distances between individuals is 0.</p>
-<p>Now, we can introduce random mutations in our dataset. We allow only two alleles per variant denoted by either a 0 which was the original variant or a 1, a new variant that can arise due to mutation. Such mutations can occur at any variant position in any individual at any chromosome. Mutations can also result in genes switching back and forth between the 0 and 1 state. I have simulated 100 generations that may or may not result in such a random mutation. Please note that after each generation, the number of individuals always remain the same. So even if a new individual is born with or without mutation, an old individual will have to die to make way for the new one.</p>
+<p>Now, we can introduce random mutations in our dataset. We allow only two alleles per variant denoted by either a 0 which was the original variant or a 1, a new variant that can arise due to mutation. Such mutations can occur at any variant position in any individual at any chromosome. Mutations can also result in genes switching back and forth between the 0 and 1 state. I have simulated 100 generations that may or may not result in such a random mutation. Please note that after each generation, the number of individuals always remains the same. So even if a new individual is born with or without mutation, an old individual will have to die to make way for the new one.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14549,7 +14549,7 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Genetic-Drift">Genetic Drift<a class="anchor-link" href="#Genetic-Drift">&#182;</a></h2><p>Genetic Drift is an evolutionary mechanism by which the allele frequency changes by chance. Founder Effect is an example of genetic drift that happens when a certain group of individuals in a population decides to break off from a population and migrate to a different place, thus creating two subpopulations.</p>
-<p>As an example, suppose among the 10 individuals presented above, three wanted to migrate to a different place. This will result in the creation of two subpopulations, S1 and S2 each having their own <a href="#tag6">gene pool</a>. Let the 6th, 7th and 8th individual decide to migrate elsewhere. The 7 remaining individuals can be represented as follows:</p>
+<p>As an example, suppose among the 10 individuals presented above, three wanted to migrate to a different place. This will result in the creation of two subpopulations, $S_1$ and $S_2$ each having their own <a href="#tag6">gene pool</a>. Let the 6th, 7th and 8th individual decide to migrate elsewhere. The 7 remaining individuals can be represented as follows:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -15034,7 +15034,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Calculating-$F_{st}$-between-S1-and-S2-right-after-S2-migrated">Calculating $F_{st}$ between S1 and S2 right after S2 migrated<a class="anchor-link" href="#Calculating-$F_{st}$-between-S1-and-S2-right-after-S2-migrated">&#182;</a></h2>
+<h2 id="Calculating-$F_{st}$-between-$S_1$-and-$S_2$-right-after-$S_2$-migrated">Calculating $F_{st}$ between $S_1$ and $S_2$ right after $S_2$ migrated<a class="anchor-link" href="#Calculating-$F_{st}$-between-$S_1$-and-$S_2$-right-after-$S_2$-migrated">&#182;</a></h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -15074,7 +15074,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Calculating-$F_{st}$-after-purifying-selection-in-S2">Calculating $F_{st}$ after purifying selection in S2<a class="anchor-link" href="#Calculating-$F_{st}$-after-purifying-selection-in-S2">&#182;</a></h2>
+<h2 id="Calculating-$F_{st}$-after-purifying-selection-in-$S_2$">Calculating $F_{st}$ after purifying selection in $S_2$<a class="anchor-link" href="#Calculating-$F_{st}$-after-purifying-selection-in-$S_2$">&#182;</a></h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -15114,7 +15114,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Calculating-$F_{st}$-after-positive-&amp;-purifying-selection-in-S1-and-S2-respectively">Calculating $F_{st}$ after positive &amp; purifying selection in S1 and S2 respectively<a class="anchor-link" href="#Calculating-$F_{st}$-after-positive-&amp;-purifying-selection-in-S1-and-S2-respectively">&#182;</a></h2>
+<h2 id="Calculating-$F_{st}$-after-positive-&amp;-purifying-selection-in-$S_1$-and-$S_2$-respectively">Calculating $F_{st}$ after positive &amp; purifying selection in $S_1$ and $S_2$ respectively<a class="anchor-link" href="#Calculating-$F_{st}$-after-positive-&amp;-purifying-selection-in-$S_1$-and-$S_2$-respectively">&#182;</a></h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -15191,6 +15191,12 @@ a.anchor-link {
 <li><a id='tag8'>Pairwise Distance</a>: There can be a variety of ways to calculate distances between two vectors. Here we refer to Euclidean Distance.</li>
 <li><a id='tag9'>Allele</a>: An allele is one of two or more versions of the same gene.</li>
 </ol>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The source code along with the raw ipython notebook is available at: <a href="https://github.com/deeprob/BIOL-460-UNESSAY1">https://github.com/deeprob/BIOL-460-UNESSAY1</a></p>
 
 </div>
 </div>
